@@ -125,3 +125,30 @@
     @apply bg-background text-foreground;
   }
 }
+
+::-webkit-scrollbar {
+  width: 4px; 
+  height: 8px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6; 
+  border-radius: 10px;
+  box-shadow: 0 0 10px #5596ff;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb; 
+  box-shadow: 0 0 15px #95b7ff; 
+  filter: brightness(1.2);
+}
+
+html, body {
+  overflow: auto;
+}
+

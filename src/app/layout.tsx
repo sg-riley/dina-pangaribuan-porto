@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${plusJakartaFont.variable} ${poppinsFont.variable} antialiased bg-radial-[at_50%_85%] from-deep-blue via-midnight to-black to-100%`}
+        className={`${plusJakartaFont.variable} ${poppinsFont.variable} antialiased bg-radial-[at_50%_85%] from-deep-blue via-midnight to-black to-100% `}
       >
         <MainNavbar />
 

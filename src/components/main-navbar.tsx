@@ -5,7 +5,6 @@ import {
   NavItems,
   MobileNav,
   NavbarLogo,
-  NavbarButton,
   MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,
@@ -31,16 +30,16 @@ export function MainNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <Navbar className="h-16 w-5/6 my-4 mx-auto rounded-lg flex-col items-center bg-blue-300/20 backdrop-blur-md shadow-md z-50 fixed top-0">
+    <Navbar className="h-16 w-5/6 my-4 mx-auto rounded-lg flex-col fixed top-0 items-center bg-blue-300/20  outline outline-1 outline-blue-400 shadow-blue-500/30 shadow-lg">
       {/* Desktop Navigation */}
 
-      <NavBody className="h-full">
+      <NavBody className="h-full backdrop-blur-sm">
         <NavbarLogo />
         <NavItems items={navItems} />
       </NavBody>
 
       {/* Mobile Navigation */}
-      <MobileNav className="h-full">
+      <MobileNav className="h-full rounded-lg backdrop-blur-sm">
         <MobileNavHeader className="h-full px-4">
           <NavbarLogo />
           <MobileNavToggle
@@ -52,7 +51,7 @@ export function MainNavbar() {
         <MobileNavMenu
           isOpen={isMobileMenuOpen}
           onClose={() => setIsMobileMenuOpen(false)}
-          className="text-white"
+          className="backdrop-blur-sm bg-blue-300/20 outline-1 outline-blue-400 shadow-blue-500/30 shadow-lg"
         >
           {navItems.map((item, idx) => (
             <a
@@ -64,22 +63,6 @@ export function MainNavbar() {
               <span className="block">{item.name}</span>
             </a>
           ))}
-          <div className="flex w-full flex-col gap-4">
-            <NavbarButton
-              onClick={() => setIsMobileMenuOpen(false)}
-              variant="primary"
-              className="w-full"
-            >
-              Login
-            </NavbarButton>
-            <NavbarButton
-              onClick={() => setIsMobileMenuOpen(false)}
-              variant="primary"
-              className="w-full"
-            >
-              Book a call
-            </NavbarButton>
-          </div>
         </MobileNavMenu>
       </MobileNav>
     </Navbar>
